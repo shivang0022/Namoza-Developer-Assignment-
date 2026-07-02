@@ -1,18 +1,25 @@
-Booking Form Tracking (3-step) for OrthoNow
+# OrthoNow Booking Form Tracking (3-step)
 
-This file contains exact dataLayer JSON pushes for each booking step, GTM trigger mapping, and GA4 Funnel Exploration setup instructions.
+This document defines the booking form tracking implementation for OrthoNow.
+It includes exact `dataLayer` JSON pushes for each booking step, GTM trigger/tag mapping, and GA4 Funnel Exploration setup instructions.
 
-GTM trigger & tag strategy (high level):
-- Frontend pushes explicit dataLayer events at each step and on completion.
-- GTM has Custom Event triggers that listen for the event value (e.g., booking_form_step, booking_form_complete).
-- GA4 Event tags send those events and mapped parameters to the GA4 property.
-- Use Within same session funnel scope in GA4 Funnel Exploration to measure step-to-step drop-off.
-- Do NOT send raw PII. Use phone_present, name_present, or masked values.
+> Important: Do not send raw PII. Use flags like `phone_present`, `name_present`, or masked values only.
 
-Exact dataLayer pushes (JSON) — deliver these verbatim to frontend devs.
+## 1. Strategy Overview
 
-Step 1 — user selects clinic + specialty and lands on step 1 (push when step is shown or after selection):
+- Frontend pushes explicit `dataLayer` events at each step and on completion.
+- GTM listens for those events using Custom Event triggers.
+- GA4 Event tags send the mapped event data to the GA4 property.
+- Use a "Within same session" funnel scope in GA4 Funnel Exploration to measure step-to-step drop-off.
 
+## 2. Exact `dataLayer` Pushes
+
+### 2.1 Step 1
+
+User selects clinic + specialty and lands on step 1.
+Push this event when step 1 is shown or after the selection is complete.
+
+```json
 {
   "event": "booking_form_step",
   "step": 1,
@@ -23,9 +30,14 @@ Step 1 — user selects clinic + specialty and lands on step 1 (push when step i
   "page_path": "/book",
   "user_pseudo_id": "GA_MEASUREMENT_PSEUDO_ID"
 }
+```
 
-Step 2 — user enters name, phone, preferred date and navigates to step 2 (push on transition to step 2):
+### 2.2 Step 2
 
+User enters name, phone, and preferred date and moves to step 2.
+Push this event on transition to step 2.
+
+```json
 {
   "event": "booking_form_step",
   "step": 2,
@@ -43,9 +55,14 @@ Step 2 — user enters name, phone, preferred date and navigates to step 2 (push
     "preferred_date_set": true
   }
 }
+```
 
-Step 3 — confirmation preview (push when user reaches confirmation step):
+### 2.3 Step 3
 
+User reaches the confirmation preview step.
+Push this event when the confirmation step is displayed.
+
+```json
 {
   "event": "booking_form_step",
   "step": 3,
@@ -61,9 +78,13 @@ Step 3 — confirmation preview (push when user reaches confirmation step):
     "preferred_date": "2026-07-05"
   }
 }
+```
 
-Booking complete — push after server confirmation or on client redirect after success:
+### 2.4 Booking Complete
 
+Push after server confirmation or on client redirect after success.
+
+```json
 {
   "event": "booking_form_complete",
   "timestamp": "2026-06-30T12:00:34Z",
@@ -76,9 +97,13 @@ Booking complete — push after server confirmation or on client redirect after 
   "currency": "USD",
   "booking_status": "confirmed"
 }
+```
 
-Error push example (use when validation fails or server returns an error):
+### 2.5 Error Event
 
+Use this push when validation fails or the server returns an error.
+
+```json
 {
   "event": "booking_form_error",
   "timestamp": "2026-06-30T12:00:10Z",
@@ -88,40 +113,89 @@ Error push example (use when validation fails or server returns an error):
   "error_message": "Phone number missing",
   "field_errors": ["phone"]
 }
+```
 
-GTM variables & triggers (exact mapping):
-- Create Data Layer Variables (dlv.step, dlv.clinic_id, dlv.specialty, dlv.booking_id, dlv.user_pseudo_id, dlv.value, dlv.booking_status).
-- Triggers:
-  - Booking Step 1 — Trigger Type: Custom Event -> Event name equals booking_form_step AND dlv.step equals 1.
-  - Booking Step 2 — Custom Event where dlv.step equals 2.
-  - Booking Step 3 — Custom Event where dlv.step equals 3.
-  - Booking Complete — Custom Event -> Event name equals booking_form_complete.
-  - Booking Error — Custom Event -> Event name equals booking_form_error.
-- Tags:
-  - GA4 Event tag for booking_form_step: Event Name booking_form_step, send parameters step, clinic_id, specialty, page_path, form_partial.name_present, form_partial.phone_present.
-  - GA4 Event tag for booking_form_complete: Event Name booking_form_complete, send booking_id, clinic_id, specialty, value, currency, booking_status.
-  - GA4 Event tag for booking_form_error: Event Name booking_form_error, send step, error_code, error_message.
+## 3. GTM Variables, Triggers, and Tags
 
-GA4 Funnel Exploration setup (to measure step-level drop-off):
-1. In GA4, go to Explore -> Funnel exploration -> Create new.
-2. Set Funnel type: Trended or Standard (Standard recommended for visualizing step drops in-session).
-3. Use events (ordered) as steps:
-   - Step 1: Include booking_form_step where parameter step equals 1.
-   - Step 2: Include booking_form_step where parameter step equals 2.
-   - Step 3: Include booking_form_step where parameter step equals 3.
-   - (Optional) Final Step: booking_form_complete to show confirmed bookings.
-4. Scope: Within the same session (default).
-5. Add breakdowns: clinic_id, specialty, page_path.
-6. Add segment comparisons: session_medium or utm_campaign to compare paid vs organic traffic.
+### 3.1 Data Layer Variables
 
-How to surface step-level drop-off in GA4 reports:
-- Use the Funnel Exploration above for visual step drop-offs.
-- Build an Audience booking_funnel_dropouts_step1_to_2 where users had step==1 but not step==2 within session — use for remarketing.
-- Create custom explorations with clinic_id and traffic_source to prioritize fixes for high-volume clinics with high drop-off.
+Create the following GTM Data Layer Variables:
 
-Google Ads conversion to import (recommendation):
-- Import booking_form_complete as the primary conversion to Google Ads.
-- Rationale: It is the most reliable indicator of business value (confirmed appointment). It reduces noise from partial form completions, clicks, or downloads and aligns paid spend with actual bookings.
-- Implementation notes: Mark booking_form_complete as conversion in GA4, ensure the event has stable booking_id or server-side confirmation, then link GA4 to Google Ads and import the conversion.
+- `dlv.step`
+- `dlv.clinic_id`
+- `dlv.specialty`
+- `dlv.booking_id`
+- `dlv.user_pseudo_id`
+- `dlv.value`
+- `dlv.booking_status`
 
-If you'd like, I can also export a GTM Implementation Checklist, produce a README for dev handoff with dataLayer.push() snippets in JS, or draft GTM Trigger definitions.
+### 3.2 Triggers
+
+- **Booking Step 1**
+  - Trigger Type: Custom Event
+  - Event name equals `booking_form_step`
+  - Condition: `dlv.step` equals `1`
+
+- **Booking Step 2**
+  - Trigger Type: Custom Event
+  - Event name equals `booking_form_step`
+  - Condition: `dlv.step` equals `2`
+
+- **Booking Step 3**
+  - Trigger Type: Custom Event
+  - Event name equals `booking_form_step`
+  - Condition: `dlv.step` equals `3`
+
+- **Booking Complete**
+  - Trigger Type: Custom Event
+  - Event name equals `booking_form_complete`
+
+- **Booking Error**
+  - Trigger Type: Custom Event
+  - Event name equals `booking_form_error`
+
+### 3.3 Tags
+
+- **GA4 Event tag** for `booking_form_step`
+  - Event Name: `booking_form_step`
+  - Parameters: `step`, `clinic_id`, `specialty`, `page_path`, `form_partial.name_present`, `form_partial.phone_present`
+
+- **GA4 Event tag** for `booking_form_complete`
+  - Event Name: `booking_form_complete`
+  - Parameters: `booking_id`, `clinic_id`, `specialty`, `value`, `currency`, `booking_status`
+
+- **GA4 Event tag** for `booking_form_error`
+  - Event Name: `booking_form_error`
+  - Parameters: `step`, `error_code`, `error_message`
+
+## 4. GA4 Funnel Exploration Setup
+
+Use GA4 Explore > Funnel exploration to measure step-level drop-off.
+
+1. Create a new Funnel exploration.
+2. Set Funnel type to Standard (recommended) or Trended.
+3. Configure ordered steps:
+   - Step 1: `booking_form_step` where parameter `step` equals `1`
+   - Step 2: `booking_form_step` where parameter `step` equals `2`
+   - Step 3: `booking_form_step` where parameter `step` equals `3`
+   - Optional final step: `booking_form_complete`
+4. Set scope to Within the same session.
+5. Add breakdowns for `clinic_id`, `specialty`, and `page_path`.
+6. Add segment comparisons for `session_medium` or `utm_campaign`.
+
+## 5. Reporting and Audiences
+
+- Use the funnel exploration for visual step drop-offs.
+- Build an audience such as `booking_funnel_dropouts_step1_to_2` for users who had `step == 1` but not `step == 2` within the same session.
+- Create custom explorations by `clinic_id` and traffic source to prioritize high-volume clinics with high drop-off.
+
+## 6. Google Ads Conversion Recommendation
+
+- Import `booking_form_complete` as the primary conversion in Google Ads.
+- This event is the most reliable indicator of confirmed appointments.
+- Ensure the event has a stable `booking_id` or server-side confirmation before importing.
+- Link GA4 to Google Ads and import the conversion.
+
+---
+
+If you want, I can also create a GTM implementation checklist, a developer handoff README with `dataLayer.push()` examples, or draft the GTM trigger definitions.
