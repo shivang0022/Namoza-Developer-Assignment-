@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Get an expert orthopaedic opinion — OrthoNow</title>
+  <meta name="description" content="Book a quick orthopaedic consultation for knee or back pain in Bengaluru. Fast appointments with senior orthopaedists.">
+  <style>
+    /* Mobile-first, minimal CSS for performance and clarity */
+    :root{--brand:#0b6cf0;--accent:#073e9c;--bg:#fff;--muted:#6b7280}
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.35;color:#0b1724;background:var(--bg);-webkit-font-smoothing:antialiased}
+    .wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+    .card{width:100%;max-width:720px;background:#fff;border-radius:12px;padding:20px;box-shadow:0 6px 20px rgba(11,28,48,0.06)}
+    header{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:8px;background:linear-gradient(180deg,#e9f2ff,#fff);display:flex;align-items:center;justify-content:center;color:var(--brand);font-weight:700}
+    h1{font-size:20px;margin:10px 0 0}
+    p.lead{margin:8px 0 18px;color:var(--muted);font-size:14px}
+    .columns{display:grid;grid-template-columns:1fr;gap:16px}
+    form{display:flex;flex-direction:column;gap:12px}
+    label{font-size:13px;color:#023047}
+    input[type="text"],input[type="tel"]{width:100%;padding:12px;border:1px solid #e6eef9;border-radius:8px;font-size:15px}
+    .row{display:flex;gap:12px}
+    .primary{background:var(--brand);color:#fff;border:none;padding:13px;border-radius:10px;font-size:16px;font-weight:600;cursor:pointer}
+    .primary:active{transform:translateY(1px)}
+    .trust{display:flex;flex-direction:row;align-items:center;gap:10px;font-size:13px;color:var(--muted)}
+    .trust .stars{color:#f59e0b;font-weight:700}
+    .small{font-size:12px;color:var(--muted)}
+    .thankyou{padding:18px;border-radius:8px;background:linear-gradient(180deg,#f6fffb,#fff);text-align:center}
+    /* Larger screens layout */
+    @media(min-width:720px){
+      .columns{grid-template-columns:1fr 320px;align-items:start}
+      h1{font-size:24px}
+    }
+    /* Focus styles for accessibility */
+    input:focus{outline:3px solid rgba(11,108,240,0.12);outline-offset:2px}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <main class="card" id="page">
+    <header>
+      <div class="logo" aria-hidden="true">ON</div>
+      <div>
+        <div style="font-size:12px;color:var(--muted);font-weight:600">OrthoNow — Bengaluru</div>
+        <div class="small">Expert orthopaedic care • Quick appointments</div>
+      </div>
+    </header>
+
+    <section style="margin-top:12px" aria-labelledby="hero-title">
+      <h1 id="hero-title">Get an expert orthopaedic opinion — Book your consultation</h1>
+      <p class="lead">Fast virtual or in-clinic consults for knee and back pain. Trusted by working professionals across Bengaluru.</p>
+    </section>
+
+    <div class="columns" style="margin-top:10px">
+      <div>
+        <div role="region" aria-labelledby="form-title">
+          <h2 id="form-title" style="font-size:15px;margin:0 0 8px">Quick details (2 fields)</h2>
+          <form id="consultForm" novalidate>
+            <div>
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" inputmode="text" autocomplete="name" placeholder="Your name">
+            </div>
+            <div>
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="Mobile number" autocomplete="tel" pattern="[0-9+\- ()]{6,}" required>
+            </div>
+            <div class="row" style="margin-top:6px">
+              <button type="submit" class="primary" id="submitBtn">Book Consultation</button>
+              <div style="display:flex;align-items:center;gap:8px"><button type="button" id="whatsappBtn" aria-label="Chat on WhatsApp" style="background:transparent;border:1px solid #e6eef9;padding:10px;border-radius:8px">Chat</button></div>
+            </div>
+            <div id="formMessage" class="small" role="status" aria-live="polite" style="margin-top:6px"></div>
+          </form>
+        </div>
+      </div>
+
+      <aside class="small" aria-labelledby="trust-title">
+        <h3 id="trust-title" style="margin:0 0 8px;font-size:14px">Why choose OrthoNow</h3>
+        <div class="trust">
+          <div class="stars">★ 4.8</div>
+          <div>1.2k reviews • 9 clinics in Bengaluru • Senior orthopaedists</div>
+        </div>
+        <p class="small" style="margin-top:10px">"Quick appointment, insightful diagnosis — saved my back." — R. Srinivasan</p>
+        <p class="small" style="margin-top:12px">We prioritize fast access for professionals aged 28–50 with knee or back pain. Appointments available evenings and weekends.</p>
+      </aside>
+    </div>
+
+    <div style="margin-top:14px" class="small">We respect your privacy. By submitting you agree to be contacted by OrthoNow. No spam.</div>
+  </main>
+</div>
+
+<script>
+  // Minimal JS: validate, push to dataLayer, show thank-you state.
+  // Keep logic small to avoid blocking render for Core Web Vitals.
+  (function(){
+    'use strict';
+    // Ensure dataLayer exists but DO NOT push on load.
+    window.dataLayer = window.dataLayer || [];
+
+    var form = document.getElementById('consultForm');
+    var submitBtn = document.getElementById('submitBtn');
+    var msg = document.getElementById('formMessage');
+    var page = document.getElementById('page');
+
+    function isPhoneValid(phone){
+      if(!phone) return false;
+      // simple check: at least 6 digits (international formats allowed)
+      var digits = phone.replace(/\D/g,'');
+      return digits.length >= 6 && digits.length <= 15;
+    }
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      msg.textContent = '';
+
+      var name = (document.getElementById('name').value || '').trim();
+      var phone = (document.getElementById('phone').value || '').trim();
+
+      if(!isPhoneValid(phone)){
+        msg.textContent = 'Please enter a valid mobile number.';
+        document.getElementById('phone').focus();
+        return;
+      }
+
+      // Disable to prevent double submit
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Booking...';
+
+      // Prepare parameters for GTM dataLayer push
+      var payload = {
+        event: 'consultation_form_submitted',
+        name_present: Boolean(name),
+        phone_present: true,
+        campaign: 'GetExpertOpinion_Bengaluru',
+        page_path: location.pathname || '/',
+        timestamp: new Date().toISOString()
+      };
+
+      // Push to GTM dataLayer (fires triggers in GTM)
+      window.dataLayer.push(payload);
+
+      // Simulate quick UX response: show thank-you state without reload
+      showThankYou(name);
+
+      // Note: In production, also send to server via fetch, but this page is client-only by requirement.
+    });
+
+    function showThankYou(name){
+      // Replace inner content of main card with thank-you message
+      page.innerHTML = '\n        <div class="thankyou" role="status" aria-live="polite">\n          <h2 style="margin:0 0 8px">Thanks' + (name? (', ' + escapeHtml(name.split(' ')[0])) : '') + '! Your request is received.</h2>\n          <p style="margin:0 0 8px;color:var(--muted)">We will contact you on the provided number within 24 hours to confirm your appointment.</p>\n          <p class="small">Prefer chat? Use the WhatsApp button below to start a conversation.</p>\n          <div style="margin-top:10px">\n            <a href="https://wa.me/919999999999" style="background:var(--brand);color:#fff;padding:10px 14px;border-radius:8px;text-decoration:none;display:inline-block">Chat on WhatsApp</a>\n          </div>\n        </div>';
+      // Move focus to the thank-you heading for screen readers
+      var h2 = page.querySelector('h2');
+      if(h2){ h2.tabIndex = -1; h2.focus(); }
+    }
+
+    // Simple HTML escape for name insertion
+    function escapeHtml(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+    // Whatsapp quick link (example), non-blocking
+    document.getElementById('whatsappBtn').addEventListener('click', function(){
+      // open wa.me in new tab; no tracking here to keep minimal
+      window.open('https://wa.me/919999999999','_blank');
+    });
+  })();
+</script>
+</body>
+</html>
