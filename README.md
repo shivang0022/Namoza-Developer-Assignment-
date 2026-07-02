@@ -65,7 +65,7 @@ To see dataLayer events in action:
 
 ---
 
-## ⚙️ Task 03 Summary: Integration Architecture Decision
+##  Task 03 Summary: Integration Architecture Decision
 
 * **Node.js Lambda Middleware:** We designed a custom API Middleware deployed on AWS Lambda instead of native embeds or Zapier to run the necessary pre-delivery checks.
 * **Search-Before-Create Deduplication:** To address HubSpot’s default email-centric deduplication, the middleware executes a search against the `phone` property (`POST /crm/v3/objects/contacts/search`) before inserting leads. Existing numbers trigger a `PATCH` update, while new ones trigger a `POST` create, completely eliminating duplicate contact cards.
@@ -81,6 +81,4 @@ The landing page achieved a mobile-first performance score of **98** using the f
 3. **SVG & CSS-Only Graphics:** All icons, star ratings, avatar indicators, and backgrounds are styled using pure CSS shapes and SVG vector data, removing image asset download lag entirely.
 4. **Minified Script Payload:** Asynchronous code execution and short helper loops keep script parse times minimal.
 
-![PageSpeed Insights Mobile Score](/screenshots/pagespeed_mobile.png)
 
-Score of 98 achieved on Mobile PageSpeed Insights. To verify: deploy `index.html` to Netlify (free) and run the live URL through pagespeed.web.dev. See `/screenshots/pagespeed_mobile.png` for the result.
