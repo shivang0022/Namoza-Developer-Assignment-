@@ -1,0 +1,1595 @@
+<!-- c:\Users\sagar\Desktop\GTM project\index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO & Accessibility Metadata -->
+  <title>OrthoNow | Expert Knee & Back Pain Specialist Consultations in Bengaluru</title>
+  <meta name="description" content="Struggling with chronic knee pain or a slip disc? Get priority appointment booking with Bengaluru's top orthopaedic specialists at OrthoNow. Pain relief starts here.">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / WhatsApp Metadata -->
+  <meta property="og:title" content="OrthoNow Bengaluru | Knee & Back Pain Specialist Consultations">
+  <meta property="og:description" content="Skip the wait times at corporate hospitals. Book your expert orthopaedic consultation today. Clinics in Indiranagar, HSR, Whitefield, and Koramangala.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.orthonow.in/bengaluru">
+  <meta property="og:site_name" content="OrthoNow">
+
+  <!-- Preconnect to Fonts for Faster Rendering (PageSpeed Optimization) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* CSS VARIABLES / DESIGN SYSTEM */
+    :root {
+      --primary: #0d9488; /* Teal 600 */
+      --primary-dark: #0f766e; /* Teal 700 */
+      --primary-light: #f0fdfa; /* Teal 50 */
+      --secondary: #0f172a; /* Slate 900 */
+      --secondary-light: #1e293b; /* Slate 800 */
+      --accent: #10b981; /* Emerald 500 */
+      --accent-dark: #059669; /* Emerald 600 */
+      --bg-warm: #fafaf9; /* Stone 50 */
+      --bg-white: #ffffff;
+      --text-dark: #0f172a;
+      --text-muted: #475569; /* Slate 600 */
+      --text-light: #f8fafc;
+      --error: #e11d48; /* Rose 600 */
+      --border: #cbd5e1; /* Slate 300 */
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    /* GLOBAL RESET */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      background-color: var(--bg-warm);
+      color: var(--text-dark);
+      font-family: var(--font-sans);
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.5;
+    }
+
+    /* UTILITIES */
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+
+    /* STICKY HEADER */
+    .sticky-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      height: 60px;
+      display: flex;
+      align-items: center;
+    }
+
+    .sticky-header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .logo-symbol {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--bg-white);
+      font-weight: 800;
+      font-size: 18px;
+    }
+
+    .logo-text {
+      font-weight: 800;
+      font-size: 20px;
+      color: var(--secondary);
+      letter-spacing: -0.5px;
+    }
+
+    .logo-text span {
+      color: var(--primary);
+    }
+
+    .header-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--primary);
+      color: var(--bg-white);
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 14px;
+      transition: var(--transition);
+      min-height: 44px; /* Accessible tap target */
+      border: none;
+      cursor: pointer;
+    }
+
+    .header-cta:hover, .header-cta:focus {
+      background-color: var(--primary-dark);
+      outline: 2px solid var(--secondary);
+      outline-offset: 2px;
+    }
+
+    .header-cta svg {
+      fill: currentColor;
+      width: 16px;
+      height: 16px;
+    }
+
+    /* HERO SECTION */
+    .hero-section {
+      background: radial-gradient(circle at top right, #f0fdfa, var(--bg-warm));
+      padding: 30px 0 40px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-self: flex-start;
+      align-items: center;
+      gap: 6px;
+      background-color: var(--primary-light);
+      color: var(--primary-dark);
+      border: 1px solid rgba(13, 148, 136, 0.25);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .hero-badge-dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--accent);
+      border-radius: 50%;
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.9); opacity: 0.6; }
+      50% { transform: scale(1.15); opacity: 1; }
+      100% { transform: scale(0.9); opacity: 0.6; }
+    }
+
+    .hero-title {
+      font-size: 26px;
+      line-height: 1.25;
+      font-weight: 800;
+      color: var(--secondary);
+      letter-spacing: -0.7px;
+    }
+
+    .hero-title span {
+      background: linear-gradient(120deg, var(--primary-dark), var(--primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subhead {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    /* FORM CARD CONTAINER (ABOVE FOLD ON MOBILE) */
+    .form-card {
+      background-color: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+    }
+
+    .form-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      border-top-left-radius: var(--radius-lg);
+      border-top-right-radius: var(--radius-lg);
+    }
+
+    .form-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--secondary);
+      line-height: 1.2;
+    }
+
+    .urgency-indicator {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #fffbeb; /* Amber 50 */
+      border: 1px solid #fde68a; /* Amber 200 */
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #b45309; /* Amber 700 */
+    }
+
+    .urgency-indicator svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    .urgency-date {
+      font-weight: 700;
+    }
+
+    .booking-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--secondary);
+    }
+
+    .form-input {
+      width: 100%;
+      height: 44px; /* Large mobile friendly */
+      padding: 0 14px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 15px;
+      color: var(--secondary);
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .form-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
+    }
+
+    .form-input.input-error {
+      border-color: var(--error);
+      background-color: #fff1f2;
+    }
+
+    .error-message {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--error);
+      display: none;
+    }
+
+    .form-cta-btn {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: var(--bg-white);
+      border: none;
+      border-radius: var(--radius-sm);
+      height: 48px;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: var(--transition);
+      margin-top: 4px;
+      box-shadow: 0 4px 6px rgba(13, 148, 136, 0.2);
+    }
+
+    .form-cta-btn:hover, .form-cta-btn:focus {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 12px rgba(13, 148, 136, 0.3);
+      outline: 2px solid var(--secondary);
+      outline-offset: 2px;
+    }
+
+    .form-cta-btn:active {
+      transform: translateY(0);
+    }
+
+    .security-note {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+
+    .security-note svg {
+      width: 12px;
+      height: 12px;
+      fill: currentColor;
+    }
+
+    /* THANK YOU STATE */
+    .thank-you-state {
+      display: none;
+      text-align: center;
+      padding: 10px 0;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      animation: fadeIn 0.4s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .success-icon-wrapper {
+      width: 60px;
+      height: 60px;
+      background-color: var(--primary-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+    }
+
+    .success-icon-wrapper svg {
+      width: 32px;
+      height: 32px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .thank-you-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--secondary);
+    }
+
+    .thank-you-text {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .next-step-box {
+      background-color: var(--primary-light);
+      border: 1px dashed var(--primary);
+      border-radius: var(--radius-md);
+      padding: 12px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--primary-dark);
+      width: 100%;
+      text-align: left;
+    }
+
+    .next-step-title {
+      font-weight: 700;
+      margin-bottom: 2px;
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 0.5px;
+    }
+
+    .thank-you-whatsapp-btn {
+      width: 100%;
+      height: 48px;
+      background-color: #25d366;
+      color: var(--bg-white);
+      text-decoration: none;
+      border-radius: var(--radius-sm);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 15px;
+      transition: var(--transition);
+      box-shadow: 0 4px 6px rgba(37, 211, 102, 0.2);
+    }
+
+    .thank-you-whatsapp-btn:hover, .thank-you-whatsapp-btn:focus {
+      background-color: #128c7e;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 12px rgba(37, 211, 102, 0.3);
+      outline: 2px solid var(--secondary);
+      outline-offset: 2px;
+    }
+
+    .thank-you-whatsapp-btn svg {
+      fill: currentColor;
+      width: 20px;
+      height: 20px;
+    }
+
+    /* TRUST BAR */
+    .trust-bar {
+      background-color: var(--secondary);
+      color: var(--bg-white);
+      padding: 16px 0;
+    }
+
+    .trust-bar-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      text-align: center;
+    }
+
+    .trust-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .trust-number {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: -0.5px;
+    }
+
+    .trust-label {
+      font-size: 11px;
+      color: var(--border);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* SOCIAL PROOF (PATIENT REVIEWS) */
+    .reviews-section {
+      padding: 40px 0;
+      background-color: var(--bg-white);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-title-wrapper {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--secondary);
+      letter-spacing: -0.5px;
+    }
+
+    .section-title span {
+      color: var(--primary);
+    }
+
+    .section-subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .reviews-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .review-card {
+      background-color: var(--bg-warm);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .avatar-css {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: var(--bg-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .reviewer-meta {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .reviewer-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--secondary);
+    }
+
+    .reviewer-info {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .review-rating {
+      display: flex;
+      gap: 2px;
+      color: #f59e0b; /* Amber star color */
+    }
+
+    .review-rating svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+    }
+
+    .review-rating-score {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--secondary);
+      margin-left: 4px;
+    }
+
+    .condition-tag {
+      display: inline-flex;
+      align-self: flex-start;
+      background-color: #f1f5f9;
+      color: var(--secondary);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 12px;
+      border: 1px solid #cbd5e1;
+    }
+
+    .review-text {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.45;
+      font-style: italic;
+    }
+
+    /* HOW IT WORKS */
+    .how-it-works-section {
+      padding: 40px 0;
+      background-color: var(--bg-warm);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .steps-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .step-card {
+      background-color: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .step-number-css {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: var(--primary-light);
+      border: 2px solid var(--primary);
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .step-content {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .step-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--secondary);
+    }
+
+    .step-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* DOCTOR SPOTLIGHT */
+    .doctor-section {
+      padding: 40px 0;
+      background-color: var(--bg-white);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .doctor-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .doctor-card {
+      background-color: var(--bg-warm);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .doctor-avatar-section {
+      background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .doctor-avatar-circle {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: var(--bg-white);
+      border: 4px solid var(--primary);
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 26px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .doctor-info-section {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .doctor-name {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--secondary);
+    }
+
+    .doctor-title {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--primary-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .doctor-credential-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .doctor-credential-item svg {
+      width: 14px;
+      height: 14px;
+      fill: var(--primary);
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    /* FAQ SECTION */
+    .faq-section {
+      padding: 40px 0;
+      background-color: var(--bg-warm);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .faq-item {
+      background-color: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .faq-button {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 14px 16px;
+      text-align: left;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--secondary);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      transition: var(--transition);
+      min-height: 44px;
+    }
+
+    .faq-button:hover, .faq-button:focus {
+      background-color: var(--primary-light);
+      outline: none;
+    }
+
+    .faq-icon {
+      width: 16px;
+      height: 16px;
+      fill: none;
+      stroke: var(--text-muted);
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: transform 0.2s ease;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+      stroke: var(--primary);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 16px 14px 16px;
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      animation: slideDown 0.2s ease-out;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* FOOTER */
+    .footer {
+      background-color: var(--secondary);
+      color: var(--bg-white);
+      padding: 30px 0;
+      margin-top: auto;
+    }
+
+    .footer-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      font-size: 13px;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .footer-logo {
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--bg-white);
+    }
+
+    .footer-logo span {
+      color: var(--accent);
+    }
+
+    .footer-info {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      color: var(--border);
+    }
+
+    .footer-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .footer-info-item svg {
+      width: 14px;
+      height: 14px;
+      fill: var(--accent);
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .footer-disclaimer {
+      border-top: 1px solid var(--secondary-light);
+      padding-top: 16px;
+      color: var(--text-muted);
+      font-size: 11px;
+      line-height: 1.4;
+    }
+
+    /* FLOATING WHATSAPP BUTTON */
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      background-color: #25d366;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--bg-white);
+      text-decoration: none;
+      z-index: 99;
+      transition: var(--transition);
+    }
+
+    .floating-whatsapp:hover, .floating-whatsapp:focus {
+      background-color: #128c7e;
+      transform: scale(1.1);
+      outline: 2px solid var(--secondary);
+      outline-offset: 2px;
+    }
+
+    .floating-whatsapp svg {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+    }
+
+    /* MEDIA QUERIES FOR TABLET/DESKTOP */
+    @media (min-width: 768px) {
+      .hero-grid {
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 40px;
+      }
+      .hero-title {
+        font-size: 38px;
+      }
+      .hero-subhead {
+        font-size: 17px;
+      }
+      .trust-bar-grid {
+        max-width: 800px;
+        margin: 0 auto;
+        gap: 30px;
+      }
+      .trust-number {
+        font-size: 26px;
+      }
+      .trust-label {
+        font-size: 12px;
+      }
+      .reviews-grid {
+        grid-template-columns: repeat(3, 1fr);
+        display: grid;
+      }
+      .steps-grid {
+        grid-template-columns: repeat(3, 1fr);
+        display: grid;
+      }
+      .doctor-grid {
+        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+        gap: 30px;
+      }
+      .footer-grid {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .footer-brand {
+        max-width: 40%;
+      }
+      .footer-info {
+        max-width: 50%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. STICKY HEADER -->
+  <header class="sticky-header" aria-label="Main Header">
+    <div class="container">
+      <div class="logo-container">
+        <div class="logo-symbol" aria-hidden="true">O</div>
+        <div class="logo-text">Ortho<span>Now</span></div>
+      </div>
+      <!-- Text-based logo and accessible Click-to-call CTA -->
+      <a href="tel:+918049123456" id="header_call_cta" class="header-cta" aria-label="Call OrthoNow clinic at +91 80 4912 3456">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1.02 1.02 0 0 0-1.02.24l-2.2 2.2a15.045 15.045 0 0 1-6.59-6.59l2.2-2.2a1 1 0 0 0 .25-1.02A11.75 11.75 0 0 1 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"/></svg>
+        <span>Call Now</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- 2. HERO SECTION -->
+    <section class="hero-section" aria-labelledby="hero-title-heading">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <div class="hero-content">
+            <div class="hero-badge">
+              <span class="hero-badge-dot"></span>
+              <span>Bengaluru Specialist Team Available</span>
+            </div>
+            <h1 id="hero-title-heading" class="hero-title">
+              Still ignoring that persistent <span>knee or back pain?</span>
+            </h1>
+            <p class="hero-subhead">
+              Skip the weeks of waiting at crowded corporate hospitals. Get an expert clinical consultation with OrthoNow's senior specialists this week.
+            </p>
+          </div>
+
+          <!-- FORM CONTAINER (ALL ABOVE THE FOLD ON MOBILE) -->
+          <div class="form-container">
+            <div class="form-card" id="form_card_wrapper">
+              <h2 class="form-title">Request Priority Consultation</h2>
+              
+              <!-- Real, Dynamic Urgency Element -->
+              <div class="urgency-indicator" aria-live="polite">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                <span>Next available slot: <span class="urgency-date" id="urgency_slot_date">Tomorrow, 10:00 AM</span></span>
+              </div>
+
+              <form id="consultation_form" class="booking-form" novalidate>
+                <div class="form-group">
+                  <label for="patient_name" class="form-label">Full Name *</label>
+                  <input type="text" id="patient_name" class="form-input" placeholder="e.g. Rajesh Kumar" required aria-required="true" aria-describedby="name_error">
+                  <span id="name_error" class="error-message" role="alert">Please enter your full name.</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="patient_phone" class="form-label">Mobile Number *</label>
+                  <input type="tel" id="patient_phone" class="form-input" placeholder="e.g. 9845012345" required aria-required="true" aria-describedby="phone_error">
+                  <span id="phone_error" class="error-message" role="alert">Please enter a valid 10-digit Indian phone number.</span>
+                </div>
+
+                <button type="submit" id="submit_booking_btn" class="form-cta-btn">
+                  Check Specialist Availability
+                </button>
+
+                <div class="security-note">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+                  <span>100% Secure & Confidential. No spam.</span>
+                </div>
+              </form>
+
+              <!-- SUCCESS/THANK YOU STATE (Swaps dynamic content within container) -->
+              <div id="thank_you_container" class="thank-you-state">
+                <div class="success-icon-wrapper">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <h3 class="thank-you-title">Enquiry Received!</h3>
+                <p class="thank-you-text">
+                  Thank you, <strong id="success_user_name">Patient</strong>. We have reserved a temporary priority slot for your consultation.
+                </p>
+                <div class="next-step-box">
+                  <div class="next-step-title">What happens next:</div>
+                  Our Senior Medical Advisor will call you within <strong>15 minutes</strong> on <strong id="success_user_phone">your number</strong> to confirm your doctor and slot.
+                </div>
+                <a href="https://wa.me/918049123456?text=Hi%20OrthoNow%2C%20I%20just%20submitted%20a%20priority%20consultation%20request%20for%20pain%20relief.%20Please%20confirm%20my%20slot." id="thank_you_whatsapp_cta" class="thank-you-whatsapp-btn" target="_blank" rel="noopener">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.45L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.965C16.58 2.038 14.1 1.013 11.47 1.011 6.03 1.011 1.606 5.38 1.603 10.81c-.001 1.692.447 3.344 1.3 4.8l-.996 3.633 3.74-.989zM18.13 15.77c-.328-.164-1.937-.954-2.235-1.063-.298-.11-.515-.164-.73.164-.216.328-.836 1.063-1.025 1.28-.19.216-.379.243-.707.079-1.396-.697-2.316-1.22-3.23-2.793-.243-.418.243-.388.697-1.29.076-.154.038-.29-.019-.4-.057-.11-.515-1.24-.707-1.7-.186-.448-.37-.388-.515-.395-.133-.007-.285-.008-.437-.008-.152 0-.4-.057-.61.173-.21.23-.8 0-.8-1.956s.69-1.956.784-2.083c.094-.127 1.34-2.046 3.246-2.87.454-.196.81-.314 1.08-.4.453-.144.866-.123 1.192-.075.364.054 1.1.45 1.25 1.077.16.626.16 1.162.11 1.265-.05.104-.19.164-.52.328z"/></svg>
+                  <span>Connect Instantly on WhatsApp</span>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. TRUST STATS BAR -->
+    <section class="trust-bar" aria-label="Clinical Metrics">
+      <div class="container">
+        <div class="trust-bar-grid">
+          <div class="trust-stat">
+            <span class="trust-number">9</span>
+            <span class="trust-label">Clinics in BLR</span>
+          </div>
+          <div class="trust-stat">
+            <span class="trust-number">50,000+</span>
+            <span class="trust-label">Happy Patients</span>
+          </div>
+          <div class="trust-stat">
+            <span class="trust-number">15+ Years</span>
+            <span class="trust-label">Clinical Excellence</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. SOCIAL PROOF (PATIENT REVIEWS) -->
+    <section class="reviews-section" aria-labelledby="reviews-title-heading">
+      <div class="container">
+        <div class="section-title-wrapper">
+          <h2 id="reviews-title-heading" class="section-title">Patient <span>Success Stories</span></h2>
+          <p class="section-subtitle">Real experiences from working professionals in Bengaluru</p>
+        </div>
+
+        <div class="reviews-grid">
+          <!-- Card 1 -->
+          <article class="review-card">
+            <div class="review-header">
+              <div class="avatar-css" aria-hidden="true">RN</div>
+              <div class="reviewer-meta">
+                <span class="reviewer-name">Rajesh Nair</span>
+                <span class="reviewer-info">34, Software Architect &bull; Indiranagar</span>
+              </div>
+            </div>
+            <div class="review-rating" aria-label="Rating: 5 out of 5 stars">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <span class="review-rating-score">5.0</span>
+            </div>
+            <span class="condition-tag">ACL Tear Rehab</span>
+            <p class="review-text">
+              "Suffered a major ACL tear while playing football at HSR Layout. Other corporate hospitals quoted a 4-week wait time for surgery. OrthoNow scheduled my arthroscopic surgery within 3 days. Back to running after 6 months of rehab!"
+            </p>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="review-card">
+            <div class="review-header">
+              <div class="avatar-css" aria-hidden="true">SH</div>
+              <div class="reviewer-meta">
+                <span class="reviewer-name">Sneha Hegde</span>
+                <span class="reviewer-info">42, Senior Program Manager &bull; Whitefield</span>
+              </div>
+            </div>
+            <div class="review-rating" aria-label="Rating: 5 out of 5 stars">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <span class="review-rating-score">5.0</span>
+            </div>
+            <span class="condition-tag">L4-L5 Slip Disc Recovery</span>
+            <p class="review-text">
+              "Suffered from debilitating lower back pain from 12-hour desk jobs. The specialists at OrthoNow Indiranagar diagnosed a L4-L5 herniation, suggested a custom physiotherapy plan, and avoided spine surgery completely. I'm pain-free today."
+            </p>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="review-card">
+            <div class="review-header">
+              <div class="avatar-css" aria-hidden="true">VR</div>
+              <div class="reviewer-meta">
+                <span class="reviewer-name">Dr. Vikram Rao</span>
+                <span class="reviewer-info">48, Consultant Pathologist &bull; HSR Layout</span>
+              </div>
+            </div>
+            <div class="review-rating" aria-label="Rating: 4.8 out of 5 stars">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 15.4V2l-2.7 5.6-5.8.5 4.3 3.8-1.1 5.9z"/></svg>
+              <span class="review-rating-score">4.8</span>
+            </div>
+            <span class="condition-tag">Knee Osteoarthritis</span>
+            <p class="review-text">
+              "As a medical professional, I researched where to go for my knee pain. I chose OrthoNow's Koramangala clinic. The joint preservation therapy they performed gave me complete relief without requiring a total knee replacement."
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. HOW IT WORKS -->
+    <section class="how-it-works-section" aria-labelledby="steps-title-heading">
+      <div class="container">
+        <div class="section-title-wrapper">
+          <h2 id="steps-title-heading" class="section-title">Your Path to <span>Pain-Free Living</span></h2>
+          <p class="section-subtitle">A seamless, 3-step clinical process designed for busy professionals</p>
+        </div>
+
+        <div class="steps-grid">
+          <!-- Step 1 -->
+          <div class="step-card">
+            <div class="step-number-css" aria-hidden="true">1</div>
+            <div class="step-content">
+              <h3 class="step-title">Book Priority Slot</h3>
+              <p class="step-desc">Fill out your name and phone number. Our dedicated medical advisor calls you back within 15 minutes to secure your preferred slot.</p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="step-card">
+            <div class="step-number-css" aria-hidden="true">2</div>
+            <div class="step-content">
+              <h3 class="step-title">Specialist Consultation</h3>
+              <p class="step-desc">Visit your nearest state-of-the-art clinic. Get a comprehensive physical evaluation and advanced diagnostics under one roof.</p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="step-card">
+            <div class="step-number-css" aria-hidden="true">3</div>
+            <div class="step-content">
+              <h3 class="step-title">Accelerated Recovery</h3>
+              <p class="step-desc">Embark on a customized non-surgical rehab or arthroscopic treatment program designed to get you back to active routines rapidly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. DOCTOR SPOTLIGHT -->
+    <section class="doctor-section" aria-labelledby="doctor-title-heading">
+      <div class="container">
+        <div class="section-title-wrapper">
+          <h2 id="doctor-title-heading" class="section-title">Senior <span>Orthopaedic Leaders</span></h2>
+          <p class="section-subtitle">Get diagnosed by veterans with decades of clinical expertise</p>
+        </div>
+
+        <div class="doctor-grid">
+          <!-- Doctor 1 -->
+          <article class="doctor-card">
+            <div class="doctor-avatar-section">
+              <div class="doctor-avatar-circle" aria-hidden="true">SA</div>
+            </div>
+            <div class="doctor-info-section">
+              <h3 class="doctor-name">Dr. Sandeep Acharya</h3>
+              <span class="doctor-title">Senior Joint Replacement & Arthroscopy Specialist</span>
+              
+              <div class="doctor-credential-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span>MBBS, MS (Orthopaedics)</span>
+              </div>
+              <div class="doctor-credential-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span>Fellowship in Joint Replacement (Germany)</span>
+              </div>
+              <div class="doctor-credential-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span>18+ Years Experience (Ex-Apollo, Ex-Fortis Senior Consultant)</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Doctor 2 -->
+          <article class="doctor-card">
+            <div class="doctor-avatar-section">
+              <div class="doctor-avatar-circle" aria-hidden="true">MK</div>
+            </div>
+            <div class="doctor-info-section">
+              <h3 class="doctor-name">Dr. Meera Krishnan</h3>
+              <span class="doctor-title">Senior Spine Care & Biomechanics Specialist</span>
+              
+              <div class="doctor-credential-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span>MBBS, MS (Orthopaedics)</span>
+              </div>
+              <div class="doctor-credential-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span>Fellowship in Spine Surgery (Singapore General Hospital)</span>
+              </div>
+              <div class="doctor-credential-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span>14+ Years Experience (Ex-Associate Professor at St. John's Medical College)</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. FAQ SECTION -->
+    <section class="faq-section" aria-labelledby="faq-title-heading">
+      <div class="container">
+        <div class="section-title-wrapper">
+          <h2 id="faq-title-heading" class="section-title">Frequently Asked <span>Questions</span></h2>
+          <p class="section-subtitle">Everything you need to know about OrthoNow clinic consultations</p>
+        </div>
+
+        <div class="faq-list">
+          <!-- FAQ 1 -->
+          <div class="faq-item">
+            <button class="faq-button" aria-expanded="false" onclick="toggleFaq(this)">
+              <span>How quickly can I get an appointment with a specialist?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              With our dedicated priority booking workflow for Bengaluru working professionals, we guarantee an appointment slot within 24 hours of form submission. Most patients are matched with a senior specialist and seen the very next day.
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item">
+            <button class="faq-button" aria-expanded="false" onclick="toggleFaq(this)">
+              <span>Do you accept private health insurance and corporate policies?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              Yes, OrthoNow is empanelled with all major Indian health insurance providers, TPAs, and corporate covers (including Medi Assist, Paramount, ICICI Lombard, Star Health, and HDFC Ergo). Our on-site billing desk manages all cashless pre-authorizations so you can focus entirely on recovery.
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item">
+            <button class="faq-button" aria-expanded="false" onclick="toggleFaq(this)">
+              <span>Will I need surgery for my back or knee pain?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              No. In over 85% of clinical cases at OrthoNow, patients recover completely without surgery. We emphasize joint preservation, posturology adjustments, muscle-strengthening physiotherapy regimes, and modern targeted pain-management injections. Surgical interventions are only suggested if conservative methods are exhausted.
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item">
+            <button class="faq-button" aria-expanded="false" onclick="toggleFaq(this)">
+              <span>Where are your clinics located in Bengaluru?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              We operate state-of-the-art clinics across Bengaluru's business hubs: Indiranagar, HSR Layout, Whitefield, Koramangala, and Jayanagar. Every facility includes advanced digital X-ray screening rooms, isolated diagnostic suites, and fully outfitted physiotherapy and rehabilitation bays.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 8. FOOTER -->
+  <footer class="footer" aria-label="Footer Info">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">Ortho<span>Now</span></div>
+          <p>OrthoNow is a premier network of specialized orthopaedic clinics providing evidence-based spine, joint, and sports injury care across Bengaluru, Hyderabad, and Chennai.</p>
+        </div>
+        <div class="footer-info">
+          <div class="footer-info-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            <span>OrthoNow Headquarters: 100 Feet Road, HAL 2nd Stage, Indiranagar, Bengaluru, Karnataka - 560038</span>
+          </div>
+          <div class="footer-info-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79a15.149 15.149 0 0 0 6.59 6.59l2.2-2.2c.28-.28.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            <span>Direct Desk: +91 80 4912 3456</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-disclaimer">
+        <p>Disclaimer: OrthoNow is a specialist consultation booking service. It does not provide medical emergency services. If you are experiencing a trauma event, severe fracture, or suspected compound injury, please go directly to the nearest hospital emergency department.</p>
+        <p style="margin-top: 8px;">&copy; 2026 OrthoNow Clinics Private Limited. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 9. FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/918049123456?text=Hi%20OrthoNow%2C%20I%20would%20like%20to%20chat%20with%20a%20clinical%20advisor%20about%20my%20pain%20relief%20consultation." id="floating_whatsapp_widget" class="floating-whatsapp" target="_blank" rel="noopener" aria-label="Chat with OrthoNow specialist on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.45L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.965C16.58 2.038 14.1 1.013 11.47 1.011 6.03 1.011 1.606 5.38 1.603 10.81c-.001 1.692.447 3.344 1.3 4.8l-.996 3.633 3.74-.989zM18.13 15.77c-.328-.164-1.937-.954-2.235-1.063-.298-.11-.515-.164-.73.164-.216.328-.836 1.063-1.025 1.28-.19.216-.379.243-.707.079-1.396-.697-2.316-1.22-3.23-2.793-.243-.418.243-.388.697-1.29.076-.154.038-.29-.019-.4-.057-.11-.515-1.24-.707-1.7-.186-.448-.37-.388-.515-.395-.133-.007-.285-.008-.437-.008-.152 0-.4-.057-.61.173-.21.23-.8 0-.8-1.956s.69-1.956.784-2.083c.094-.127 1.34-2.046 3.246-2.87.454-.196.81-.314 1.08-.4.453-.144.866-.123 1.192-.075.364.054 1.1.45 1.25 1.077.16.626.16 1.162.11 1.265-.05.104-.19.164-.52.328z"/></svg>
+  </a>
+
+  <!-- VANILLA JAVASCRIPT (PageSpeed Optimized & Minified Logic) -->
+  <script>
+    // Initialize DataLayer Array
+    window.dataLayer = window.dataLayer || [];
+
+    // Dynamically calculate tomorrow's date for the Urgency Element (highly realistic)
+    (function setUrgencyDate() {
+      try {
+        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        const dayName = days[tomorrow.getDay()];
+        const monthName = months[tomorrow.getMonth()];
+        const dateNum = tomorrow.getDate();
+        const year = tomorrow.getFullYear();
+        document.getElementById('urgency_slot_date').textContent = `${dayName}, ${monthName} ${dateNum}, ${year} at 10:00 AM`;
+      } catch (e) {
+        console.error("Error setting urgency date:", e);
+      }
+    })();
+
+    // Toggle FAQ Accordion State
+    function toggleFaq(button) {
+      const item = button.parentNode;
+      const isActive = item.classList.contains('active');
+      
+      // Close all other FAQ items for clean UX
+      document.querySelectorAll('.faq-item').forEach(el => {
+        el.classList.remove('active');
+        el.querySelector('.faq-button').setAttribute('aria-expanded', 'false');
+      });
+
+      if (!isActive) {
+        item.classList.add('active');
+        button.setAttribute('aria-expanded', 'true');
+      }
+    }
+
+    // GTM Event Trigger: Direct Header Click-to-Call
+    document.getElementById('header_call_cta').addEventListener('click', function() {
+      window.dataLayer.push({
+        'event': 'call_now_click',
+        'click_location': 'sticky_header',
+        'phone_number': '+918049123456',
+        'page_url': window.location.href,
+        'timestamp': new Date().toISOString()
+      });
+    });
+
+    // GTM Event Trigger: Floating WhatsApp Widget Click
+    document.getElementById('floating_whatsapp_widget').addEventListener('click', function() {
+      window.dataLayer.push({
+        'event': 'whatsapp_click',
+        'click_location': 'floating_widget',
+        'target_url': this.href,
+        'page_url': window.location.href,
+        'timestamp': new Date().toISOString()
+      });
+    });
+
+    // Form Field Validation Logic & Custom Handlers
+    const form = document.getElementById('consultation_form');
+    const nameInput = document.getElementById('patient_name');
+    const phoneInput = document.getElementById('patient_phone');
+    
+    // Live validation styling on input
+    nameInput.addEventListener('input', () => validateField(nameInput, 'name_error', val => val.trim().length >= 2));
+    phoneInput.addEventListener('input', () => validateField(phoneInput, 'phone_error', val => /^(?:\+91|0)?[6-9]\d{9}$/.test(val.trim())));
+
+    function validateField(input, errorId, validator) {
+      const isValid = validator(input.value);
+      const errorSpan = document.getElementById(errorId);
+      if (isValid) {
+        input.classList.remove('input-error');
+        errorSpan.style.display = 'none';
+        input.setAttribute('aria-invalid', 'false');
+      } else {
+        input.classList.add('input-error');
+        errorSpan.style.display = 'block';
+        input.setAttribute('aria-invalid', 'true');
+      }
+      return isValid;
+    }
+
+    // Function to dynamically parse clinic preference from URL parameters or path
+    function getClinicPreference() {
+      const params = new URLSearchParams(window.location.search);
+      // Google Ads can pass clinic via ?clinic= or ?utm_content=
+      // Example campaign URL: orthonow.in/bengaluru?clinic=koramangala&utm_source=google
+      const clinicParam = params.get('clinic') || 
+                          params.get('utm_content') || 
+                          null;
+      
+      // Map short param values to full display names
+      const clinicMap = {
+        'koramangala':  'Koramangala, Bengaluru',
+        'indiranagar':  'Indiranagar, Bengaluru',
+        'whitefield':   'Whitefield, Bengaluru',
+        'hsr':          'HSR Layout, Bengaluru',
+        'jayanagar':    'Jayanagar, Bengaluru',
+        'hyderabad':    'Banjara Hills, Hyderabad',
+        'chennai':      'Anna Nagar, Chennai',
+      };
+      
+      if (clinicParam && clinicMap[clinicParam.toLowerCase()]) {
+        return clinicMap[clinicParam.toLowerCase()];
+      }
+      
+      // Fallback: use page path to infer clinic if no param
+      const path = window.location.pathname.toLowerCase();
+      for (const [key, value] of Object.entries(clinicMap)) {
+        if (path.includes(key)) return value;
+      }
+      
+      // Final fallback
+      return 'Bengaluru (Clinic TBD)';
+    }
+    
+    // Read once on page load, use in dataLayer push
+    const clinicPreference = getClinicPreference();
+
+    // Submit Handling
+    form.addEventListener('submit', async function(event) {
+      event.preventDefault(); // Stop page reload
+
+      const isNameValid = validateField(nameInput, 'name_error', val => val.trim().length >= 2);
+      const isPhoneValid = validateField(phoneInput, 'phone_error', val => /^(?:\+91|0)?[6-9]\d{9}$/.test(val.trim()));
+
+      if (!isNameValid || !isPhoneValid) {
+        // Set focus to the first invalid element for accessibility
+        if (!isNameValid) {
+          nameInput.focus();
+        } else {
+          phoneInput.focus();
+        }
+        return;
+      }
+
+      // Capture Input Values Safely
+      const patientName = nameInput.value.trim();
+      const patientPhone = phoneInput.value.trim();
+
+      // Hash sensitive inputs securely using Web Crypto API
+      const nameHash = await hashValue(patientName);
+      const phoneHash = await hashValue(patientPhone);
+
+      // Trigger GTM Consultation Form Submitted Event (Strictly after validation succeeds)
+      window.dataLayer.push({
+        'event': 'consultation_form_submitted',
+        'form_name': 'ortho_consultation_lp',
+        // clinic_preference: dynamically read from ?clinic= URL param
+        // Set by Google Ads campaign URL builder per clinic location
+        // Fallback to path-based detection, then generic Bengaluru
+        'clinic_preference': clinicPreference,
+        'lead_source': 'google_ads_consultation_lp',
+        'page_url': window.location.href,
+        'timestamp': new Date().toISOString(),
+        'patient_name_hashed': nameHash, // Privacy-preserving parameters
+        'patient_phone_hashed': phoneHash
+      });
+
+      // Update success details in the UI
+      document.getElementById('success_user_name').textContent = patientName;
+      document.getElementById('success_user_phone').textContent = patientPhone;
+
+      // Update WhatsApp post-submit CTA dynamic message with user name and clinic preference for higher pick-up conversion
+      const waButton = document.getElementById('thank_you_whatsapp_cta');
+      const clinicText = clinicPreference !== 'Bengaluru (Clinic TBD)' ? ` for the ${clinicPreference}` : '';
+      const customMsg = `Hi OrthoNow, my name is ${encodeURIComponent(patientName)}. I just requested a priority orthopaedic consultation${clinicText}. Please confirm my next available slot.`;
+      waButton.href = `https://wa.me/918049123456?text=${customMsg}`;
+
+      // GTM Event Trigger: Success Message Whatsapp Button Click
+      waButton.addEventListener('click', function() {
+        window.dataLayer.push({
+          'event': 'whatsapp_click',
+          'click_location': 'thank_you_state',
+          'target_url': this.href,
+          'page_url': window.location.href,
+          'timestamp': new Date().toISOString()
+        });
+      });
+
+      // Transition Form Container to Success Thank You State
+      form.style.display = 'none';
+      document.querySelector('.form-title').style.display = 'none';
+      document.querySelector('.urgency-indicator').style.display = 'none';
+      document.querySelector('.security-note').style.display = 'none';
+      document.getElementById('thank_you_container').style.display = 'flex';
+    });
+
+    // Real SHA-256 hashing via Web Crypto API (built-in browser API)
+    // Used to anonymize PII before pushing to GA4 via GTM
+    // Prevents Google account suspension for PII in analytics parameters
+    // No external library needed — works in all modern browsers
+    async function hashValue(str) {
+      const encoder = new TextEncoder();
+      const data = encoder.encode(str.trim().toLowerCase());
+      const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+  </script>
+</body>
+</html>
