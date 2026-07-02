@@ -4,7 +4,7 @@ This repository contains the first-month growth marketing and marketing technolo
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```text
 ├── index.html                           # Mobile-first high-converting landing page (Vanilla HTML/CSS/JS)
@@ -17,7 +17,7 @@ This repository contains the first-month growth marketing and marketing technolo
 
 ---
 
-## 📊 Task 01 Summary: GTM Event Schema Key Decisions
+## Task 01 Summary: GTM Event Schema Key Decisions
 
 * **Validation-First Triggers:** All step-level form tracking events use Custom Event triggers rather than generic click triggers. This ensures data cleanliness by only firing event pushes *after* frontend regex validation succeeds.
 * **API Success Binding:** The final conversion event (`booking_confirmed` at Step 3) is bound strictly to the server-side API HTTP 200 success callback, preventing phantom conversions in GA4 from database write failures.
@@ -26,7 +26,7 @@ This repository contains the first-month growth marketing and marketing technolo
 
 ---
 
-## 🚀 Task 02: Landing Page Performance & Testing
+## Task 02: Landing Page Performance & Testing
 
 The landing page (`index.html`) is built from scratch without external dependencies, web frameworks, or CDN libraries, optimizing it for lightning-fast loads.
 
@@ -75,7 +75,7 @@ To see dataLayer events in action:
 
 ---
 
-## ⚙️ Task 03 Summary: Integration Architecture Decision
+## Task 03 Summary: Integration Architecture Decision
 
 * **Node.js Lambda Middleware:** We designed a custom API Middleware deployed on AWS Lambda instead of native embeds or Zapier to run the necessary pre-delivery checks.
 * **Search-Before-Create Deduplication:** To address HubSpot’s default email-centric deduplication, the middleware executes a search against the `phone` property (`POST /crm/v3/objects/contacts/search`) before inserting leads. Existing numbers trigger a `PATCH` update, while new ones trigger a `POST` create, completely eliminating duplicate contact cards.
@@ -83,7 +83,7 @@ To see dataLayer events in action:
 
 ---
 
-## ⚡ PageSpeed Insights Score
+## PageSpeed Insights Score
 
 The landing page achieved a mobile-first performance score of **98** using the following optimization strategies:
 1. **Critical CSS Inlining:** All CSS rules are embedded inside a `<style>` tag, avoiding external round-trips.
