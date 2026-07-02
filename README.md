@@ -2,17 +2,7 @@
 
 This repository contains the first-month growth marketing and marketing technology deliverables for OrthoNow, a network of 9 orthopaedic clinics in Bengaluru, Hyderabad, and Chennai. The project tackles a critical conversion gap (current 2.1% landing page conversion vs. 6-8% industry benchmark) by implementing a high-converting, mobile-first consultation landing page, building a production-ready Google Tag Manager (GTM) event schema, and designing an enterprise-grade HubSpot CRM and Karix WhatsApp notification architecture.
 
----
 
-##  Repository Structure
-
-```text
-├── index.html                           # Mobile-first high-converting landing page (Vanilla HTML/CSS/JS)
-├── TASK_01_GTM_SCHEMA.md                # Comprehensive GTM Event Schema & custom developer brief
-├── TASK_03_INTEGRATION_DESIGN.md        # HubSpot CRM deduplication lookup & Karix WhatsApp architecture
-├── README.md                            # Main project walkthrough & verification instructions
-└── screenshots/
-    └── pagespeed_mobile.png             # PageSpeed Insights mobile score screenshot (98 Performance)
 ```
 
 ---
